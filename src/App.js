@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import Button from '~/Components/Button'
+import Button from '~/Components/Button';
 import './App.css';
 
 function App() {
