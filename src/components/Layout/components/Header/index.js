@@ -26,7 +26,7 @@ const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faKeyboard} />,
         title: "Keyboard shortcuts",
-    },
+    }
 ]
 function Header() {
     const [searchResults, setSearchResults] = useState([])
