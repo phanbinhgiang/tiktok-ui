@@ -42,3 +42,28 @@ a[href] {
     color: var(--text-color);
     text-decoration: none;
 }
+
+// Custom Tippy to box
+body {
+    .tippy-box {
+        font-weight: 600;
+        line-height: 2.2rem;
+        font-size: 1.4rem;
+        border-radius: 8px;
+        background-color: rgba(84, 84, 84, 0.92);
+        border: transparent;
+    }
+
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+        border: transparent;
+    }
+
+    .tippy-content {
+        padding: 8px 9px;
+    }
+
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+        top: -8px;
+    }
+}

@@ -47,6 +47,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
                 </div>
             )
             }
+            onHidden={() => { setHistory(pre => pre.slice(0, 1)) }}
         >
             {children}
 
