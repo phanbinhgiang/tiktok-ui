@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleXmark, faSpinner, faMagnifyingGlass, faEllipsisVertical, faEarthAsia, faCircleQuestion, faKeyboard, faCloudUpload } from '@fortawesome/free-solid-svg-icons'
+import { faCircleXmark, faSpinner, faMagnifyingGlass, faEllipsisVertical, faEarthAsia, faCircleQuestion, faKeyboard, faCloudUpload, faUser, faCoins, faGear, faSignOut } from '@fortawesome/free-solid-svg-icons'
 import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
@@ -61,6 +61,31 @@ function Header() {
             default:
         }
     }
+
+    const userMenu = [
+        {
+            icon: <FontAwesomeIcon icon={faUser} />,
+            title: "View profile",
+            to: "/@link",
+        },
+        {
+            icon: <FontAwesomeIcon icon={faCoins} />,
+            title: "Get coins",
+            to: "/coin",
+        },
+        {
+            icon: <FontAwesomeIcon icon={faGear} />,
+            title: "Settings",
+            to: "/settings",
+        },
+        ...MENU_ITEMS,
+        {
+            icon: <FontAwesomeIcon icon={faSignOut} />,
+            title: "Log out",
+            to: "/logout",
+            separate: true,
+        },
+    ]
 
     return (
         < header className={cx('wrapper')} >
@@ -122,7 +147,7 @@ function Header() {
                     )}
 
                     <Menu
-                        items={MENU_ITEMS}
+                        items={currentUser ? userMenu : MENU_ITEMS}
                         onChange={handleMenuChange}
                     >
                         {
