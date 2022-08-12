@@ -12,6 +12,8 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import Image from '~/components/Image';
+import { UploadIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles)
 const MENU_ITEMS = [
@@ -133,7 +135,7 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="Upload video" placement='bottom'>
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -153,11 +155,13 @@ function Header() {
                         {
                             currentUser ?
                                 (
-                                    <img
+                                    <Image
                                         className={cx('user-avatar')}
                                         src='https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/d829a22f7452b4fd6d0ef4ce1ddd3bf4~c5_100x100.jpeg?x-expires=1660345200&x-signature=lyrzihnoIE3AYJuFUsNowOd8JbE%3D'
                                         alt=''
-                                    />)
+                                        fallBack='https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png'
+                                    />
+                                )
                                 :
                                 (
                                     <button className={cx('more-btn')}>
