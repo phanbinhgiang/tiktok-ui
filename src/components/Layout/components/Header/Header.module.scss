@@ -113,6 +113,14 @@
     font-size: 2.2rem;
     color: #161823;
     padding: 4px 12px;
+    display: flex;
+    align-items: center;
+
+    .upload-icon,
+    .message-icon,
+    .inbox-icon {
+        margin-left: 16px;
+    }
 }
 
 .user-avatar {

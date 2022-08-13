@@ -13,7 +13,7 @@ import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
-import { UploadIcon } from '~/components/Icons';
+import { MessageIcon, UploadIcon, InboxIcon, SearchIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles)
 const MENU_ITEMS = [
@@ -123,7 +123,7 @@ function Header() {
                         <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
 
                         <button className={cx('search-btn')} >
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            < SearchIcon />
                         </button>
 
                     </div>
@@ -135,7 +135,9 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="Upload video" placement='bottom'>
                                 <button className={cx('action-btn')}>
-                                    <UploadIcon />
+                                    <UploadIcon className={cx('upload-icon')} />
+                                    <MessageIcon className={cx('message-icon')} />
+                                    <InboxIcon className={cx('inbox-icon')} />
                                 </button>
                             </Tippy>
                         </>
@@ -157,7 +159,7 @@ function Header() {
                                 (
                                     <Image
                                         className={cx('user-avatar')}
-                                        src='https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/d829a22f7452b4fd6d0ef4ce1ddd3bf4~c5_100x100.jpeg?x-expires=1660345200&x-signature=lyrzihnoIE3AYJuFUsNowOd8JbE%3D'
+                                        // src='https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/d829a22f7452b4fd6d0ef4ce1ddd3bf4~c5_100x100.jpeg?x-expires=1660345200&x-signature=lyrzihnoIE3AYJuFUsNowOd8JbE%3D'
                                         alt=''
                                         fallBack='https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png'
                                     />
@@ -172,7 +174,7 @@ function Header() {
 
                     </Menu>
                 </div>
-            </div>
+            </div >
 
         </ header >
     )
