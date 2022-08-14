@@ -5,7 +5,10 @@
             "~/*": [
                 "src/*"
             ]
-        }
+        },
+        // "checkJs": true,
+        "jsx": "react-jsx",
+        "module": "commonjs"
     },
     "exclude": [
         "node_modules"
