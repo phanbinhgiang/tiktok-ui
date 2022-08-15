@@ -6,7 +6,7 @@
                 "src/*"
             ]
         },
-        // "checkJs": true,
+        "checkJs": false,
         "jsx": "react-jsx",
         "module": "commonjs"
     },

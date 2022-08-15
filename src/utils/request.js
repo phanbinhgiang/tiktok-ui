@@ -9,4 +9,4 @@ export const get = async (path, options = {}) => {
     return response.data
 }
 
-export default req uest
+export default request
