@@ -9,7 +9,7 @@ import AccountItem from '~/components/AccountItem';
 import { SearchIcon } from '~/components/Icons';
 import styles from './Search.module.scss';
 import { useDebounce } from '~/hooks';
-import * as request from '~/utils/request';
+import * as searchServices from '~/apiServices/searchServices';
 
 const cx = classNames.bind(styles);
 function Search() {
@@ -41,20 +41,17 @@ function Search() {
         //         setLoading(false)
         //     })
 
-        request
-            .get('users/search', {
-                params: {
-                    q: debounced,
-                    type: 'less',
-                },
-            })
-            .then((res) => {
-                setSearchResult(res.data);
-                setLoading(false);
-            })
-            .catch(() => {
-                setLoading(false);
-            });
+        const fetchApi = async () => {
+            setLoading(true);
+
+            const result = await searchServices.search(debounced);
+
+            setSearchResult(result);
+
+            setLoading(false);
+        };
+
+        fetchApi();
     }, [debounced]);
 
     const handleClear = () => {
